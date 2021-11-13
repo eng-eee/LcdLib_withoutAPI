@@ -10,7 +10,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include "driverlib/sysctl.h"
 #include "inc/tm4c123gh6pm.h"
 
 
@@ -28,7 +27,13 @@
 #define LcdDataAdress                    0x400053C0 // Just Concerned to pins D4 D5 D6 D7
 #define GPIO_PORTB_CONTROL               (*((volatile uint32_t *)LcdControlAdress))
 #define GPIO_PORTB_DATA                  (*((volatile uint32_t *)LcdDataAdress))
+#define DELAY_15ms                       240000
+#define DELAY_4_1ms                      65600
+#define DELAY_100us                      1600
+#define DELAY_40us                       640
 
+
+void Delay(uint32_t);
 void LcdEnable();
 void LcdCmd(unsigned char );
 void LcdWrite(unsigned char );
